@@ -1,8 +1,7 @@
 # TableForm
 
-示例：
-
-
+使用场景：
+表格展示，筛选表格数据
 
 ```javascript
 import React, { PureComponent } from 'react'
@@ -47,7 +46,7 @@ class view extends PureComponent {
   render() {
 
     const tableFormProps = {
-      request: getData, // 请求，返回结果参考resolve的参数
+      request: getData, // 请求，返回promise，结果参考resolve的参数
       searchOptions: [ // 搜索选项，会生成一个form表单
         {
           itemProps: {
@@ -55,6 +54,7 @@ class view extends PureComponent {
           },
           formItem: [
             {
+              initialValue: '默认值', //输入框默认值
               valueName: 'name', // 值名
               node: <Input placeholder="请输入姓名" /> // 输入的组件
             }
@@ -70,6 +70,9 @@ class view extends PureComponent {
       ],
       footerOptions: [ // 表格底部选项
         <Button onClick={ this.handleExportExcel }>导出excel</Button>
+      ],
+      otherOperating: [ // 搜索表单之外也许需要某些操作，如添加一些信息
+        <Button type="primary">添加</Button>
       ],
       componentRef: this.componentRef // 操作子组件
     }

@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="picturePreview.html" />
+    
     
     <link rel="prev" href="./" />
     
@@ -140,6 +142,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.2" data-path="picturePreview.html">
+            
+                <a href="picturePreview.html">
+            
+                    
+                    PicturePreview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="pictureUpload.html">
+            
+                <a href="pictureUpload.html">
+            
+                    
+                    PictureUpload
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -191,7 +219,8 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="tableform">TableForm</h1>
-<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;
+&#x8868;&#x683C;&#x5C55;&#x793A;&#xFF0C;&#x7B5B;&#x9009;&#x8868;&#x683C;&#x6570;&#x636E;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React, { PureComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
 <span class="hljs-keyword">import</span> { Input, Card, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;antd&apos;</span>
 <span class="hljs-keyword">import</span> TableForm <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/components/TableForm&apos;</span>
@@ -234,7 +263,7 @@
   render() {
 
     <span class="hljs-keyword">const</span> tableFormProps = {
-      request: getData, <span class="hljs-comment">// &#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x53C2;&#x8003;resolve&#x7684;&#x53C2;&#x6570;</span>
+      request: getData, <span class="hljs-comment">// &#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;promise&#xFF0C;&#x7ED3;&#x679C;&#x53C2;&#x8003;resolve&#x7684;&#x53C2;&#x6570;</span>
       searchOptions: [ <span class="hljs-comment">// &#x641C;&#x7D22;&#x9009;&#x9879;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;form&#x8868;&#x5355;</span>
         {
           itemProps: {
@@ -242,6 +271,7 @@
           },
           formItem: [
             {
+              initialValue: <span class="hljs-string">&apos;&#x9ED8;&#x8BA4;&#x503C;&apos;</span>, <span class="hljs-comment">//&#x8F93;&#x5165;&#x6846;&#x9ED8;&#x8BA4;&#x503C;</span>
               valueName: <span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-comment">// &#x503C;&#x540D;</span>
               node: &lt;Input placeholder=&quot;&#x8BF7;&#x8F93;&#x5165;&#x59D3;&#x540D;&quot; /&gt; // &#x8F93;&#x5165;&#x7684;&#x7EC4;&#x4EF6;
             }
@@ -257,6 +287,9 @@
       ],
       footerOptions: [ // &#x8868;&#x683C;&#x5E95;&#x90E8;&#x9009;&#x9879;
         &lt;Button onClick={ this.handleExportExcel }&gt;&#x5BFC;&#x51FA;excel&lt;/Button&gt;
+      ],
+      otherOperating: [ // &#x641C;&#x7D22;&#x8868;&#x5355;&#x4E4B;&#x5916;&#x4E5F;&#x8BB8;&#x9700;&#x8981;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;
+        &lt;Button type=&quot;primary&quot;&gt;&#x6DFB;&#x52A0;&lt;/Button&gt;
       ],
       componentRef: this.componentRef // &#x64CD;&#x4F5C;&#x5B50;&#x7EC4;&#x4EF6;
     }
@@ -298,10 +331,14 @@ export default view
 
             
                 
-                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 组件">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 组件">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="picturePreview.html" class="navigation navigation-next " aria-label="Next page: PicturePreview">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -310,7 +347,7 @@ export default view
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TableForm","level":"1.3.1","depth":2,"previous":{"title":"组件","level":"1.3","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[{"title":"TableForm","level":"1.3.1","depth":2,"path":"component/tableForm.md","ref":"component/tableForm.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/tableForm.md","mtime":"2020-03-05T11:19:19.988Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-06T01:11:52.328Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TableForm","level":"1.3.1","depth":2,"next":{"title":"PicturePreview","level":"1.3.2","depth":2,"path":"component/picturePreview.md","ref":"component/picturePreview.md","articles":[]},"previous":{"title":"组件","level":"1.3","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[{"title":"TableForm","level":"1.3.1","depth":2,"path":"component/tableForm.md","ref":"component/tableForm.md","articles":[]},{"title":"PicturePreview","level":"1.3.2","depth":2,"path":"component/picturePreview.md","ref":"component/picturePreview.md","articles":[]},{"title":"PictureUpload","level":"1.3.3","depth":2,"path":"component/pictureUpload.md","ref":"component/pictureUpload.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/tableForm.md","mtime":"2020-03-10T11:31:17.120Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-13T05:56:54.743Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
