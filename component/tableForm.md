@@ -37,10 +37,11 @@ class view extends PureComponent {
 
   handleExportExcel = () => {
     /**
-     * 有时候需要对组件进行操作，或者根据筛选参数导出excel，可以获取到子组件的全部内容
+     * 有时候需要对组件进行操作，或者根据筛选参数导出excel，可以用ref获取到子组件的全部内容
      */
-    const values = this._tableForm.props.form.getFieldsValue()
-    console.log(values)
+    const values = this._tableForm.handleGetFormValues() // 搜索框的值（经过处理的）
+    const pages = this._tableForm.state.pageSearch // 页码
+    console.log(values, pages)
   }
 
   render() {

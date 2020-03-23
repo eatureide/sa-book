@@ -218,7 +218,50 @@
                                 
                                 <h1 id="pictureupload">PictureUpload</h1>
 <p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;
-&#x8868;&#x5355;&#x6240;&#x9700;&#xFF08;&#x672C;&#x7EC4;&#x4EF6;&#x65E2;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x8EAB;&#x7684;state&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0E;Form&#x8868;&#x5355;&#x8054;&#x52A8;&#x72B6;&#x6001;&#xFF09;</p>
+&#x8868;&#x5355;&#x6240;&#x9700;&#xFF08;&#x672C;&#x7EC4;&#x4EF6;&#x65E2;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x81EA;&#x8EAB;&#x7684;state&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0E;Form&#x8868;&#x5355;&#x8054;&#x52A8;&#x72B6;&#x6001;&#xFF09;&#xFF0C;&#x4F7F;&#x7528;&#x4E9A;&#x9A6C;&#x900A;AWS-S3&#x4F5C;&#x4E3A;&#x4E0A;&#x4F20;&#xFF0C;&#x8FDB;&#x5EA6;&#x6761;&#x56E0;sdk&#x4E0D;&#x652F;&#x6301;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x6240;&#x4EE5;&#x662F;&#x5047;load</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React, { PureComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> PictureUpload <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/components/PictureUpload&apos;</span>
+<span class="hljs-keyword">import</span> { Button, Form } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;antd&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">view</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">PureComponent</span> </span>{
+
+  handleGetRefValue = () =&gt; {
+    <span class="hljs-comment">//&#x83B7;&#x53D6;&#x4E0A;&#x4F20;&#x540E;&#x7684;url&#x6570;&#x7EC4;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.refs.pictureUpload.state.fileList)
+  }
+
+  handleGetFormValue = () =&gt; {
+    <span class="hljs-keyword">const</span> values = <span class="hljs-keyword">this</span>.props.form.getFieldsValue()
+    <span class="hljs-built_in">console</span>.log(values)
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> { getFieldDecorator } = <span class="hljs-keyword">this</span>.props.form
+    <span class="hljs-keyword">return</span> (
+      &lt;&gt;
+        &lt;a href=&quot;https://www.npmjs.com/package/aws-s3&quot;&gt;sdk&#x6587;&#x6863;&lt;/a&gt;
+        &lt;Form&gt;
+          &lt;Form.Item&gt;
+            {
+              getFieldDecorator(&apos;img&apos;)(
+                &lt;PictureUpload
+                  maxLength={ 1 } //&#x56FE;&#x7247;&#x4E0A;&#x4F20;&#x4E2A;&#x6570;
+                  maxSize={ 1 } //&#x56FE;&#x7247;&#x5927;&#x5C0F;&#x9650;&#x5236;&#xFF08;mb&#xFF09;
+                /&gt;
+              )
+            }
+          &lt;/Form.Item&gt;
+        &lt;/Form&gt;
+        &lt;Button onClick={ this.handleGetFormValue }&gt;getFormValue&lt;/Button&gt;
+        &lt;PictureUpload ref=&quot;pictureUpload&quot; /&gt;
+        &lt;Button onClick={ this.handleGetRefValue }&gt;getRefValue&lt;/Button&gt;
+      &lt;/a&gt;
+    )
+  }
+}
+
+export default Form.create()(view)
+</code></pre>
 
                                 
                                 </section>
@@ -258,7 +301,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PictureUpload","level":"1.3.3","depth":2,"previous":{"title":"PicturePreview","level":"1.3.2","depth":2,"path":"component/picturePreview.md","ref":"component/picturePreview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/pictureUpload.md","mtime":"2020-03-10T11:30:14.679Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-13T05:56:54.743Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PictureUpload","level":"1.3.3","depth":2,"previous":{"title":"PicturePreview","level":"1.3.2","depth":2,"path":"component/picturePreview.md","ref":"component/picturePreview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"component/pictureUpload.md","mtime":"2020-03-23T09:52:09.492Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-23T10:08:43.424Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
